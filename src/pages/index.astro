@@ -1,0 +1,78 @@
+---
+import Marquee from '../components/Marquee.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Inicio • Life Balance">
+	<main>
+		<section class="w-screen h-screen section-weight">
+			<div class="w-full h-full flex justify-center items-center">
+				<div class="w-full pl-24 flex justify-center items-start flex-col max-md:pl-6">
+					<span class="f-alexan mb-2 text-[#ffbf00] text-[20px]">Cuidando de ti</span>
+					<h1 class="f-alexan text-[56px] text-white max-md:text-[42px]">Tu bienestar, <br> nuestra prioridad</h1>
+					<a href="#more" class="bg-white text-black py-4 px-12 f-alexan rounded-full mt-8 hover:shadow-[8px_8px_0px_-3px_rgba(0,0,0,1);] duration-200 btn-view-more">Ver más</a>
+				</div>
+				<div class="w-auto max-md:w-full absolute bottom-[-3%] right-0 max-md:right-auto max-md:left-[50%] max-md:translate-x-[-50%] max-md:bottom-[1%]">
+					<img class="w-[60vw] max-md:!w-[90vw]" src="hero-1.png" alt="">
+				</div>
+			</div>
+		</section>
+	<section class="second-section w-screen h-auto flex flex-col justify-center items-center f-alexan products-section" id="view-1">
+      <h2 class="text-[56px] mb-6 text-center max-md:text-[42px] max-md:w-[90%]">¿Quiénes somos?</h2>
+      <p class="w-[50%] max-md:w-[90%] text-center">Somos una marca comprometida con tu salud y bienestar. Ofrecemos una amplia gama de productos de alta calidad diseñados para mejorar tu calidad de vida y promover un estilo de vida saludable.</p>
+    <img class="w-[200px]" src="doctor.png" alt="">
+  </section>
+
+    <section class="w-screen h-auto flex flex-col f-alexan" id="view-2">
+        <div class="w-full flex justify-between items-center h-auto screen bg-[#f2cec3] pb-8 pt-16 rounded-b-[100px] max-md:flex-col max-md:rounded-b-[30px]">
+          <h2 class="ml-[10vw] text-[4vw] max-md:text-[42px] max-md:ml-0">Nuestros <br> productos <br> destacados</h2>
+          <img class="w-[300px] mr-[10vw] max-md:mr-0 max-md:w-[200px]" src="product.png" alt="">
+        </div>
+      	<div class="product mt-8">
+          <span class="ml-[10vw] text-[24px] f-alexan mt-8"> Arrastra para descubrir 🫱 </span>
+          <Marquee/>
+        </div>
+    </section>
+
+    <section class="w-screen h-auto flex flex-col f-alexan justify-center items-center f-alexan pb-16"  id="view-3">
+      <h2 class="text-[36px] py-8 text-center f-alexan">Testimonios de nuestros clientes</h2>
+      <div class="f-alexan flex max-md:flex-col">
+        <div class="bg-[#f2cec3] max-md:my-4  shadow-[2px_2px_20px_-3px_rgba(0,0,0,0.1)] text-black f-alexan rounded-[10px] px-6 py-12 mx-[30px] flex- justify-center items-center">
+          <div class="flex flex-col justify-center items-center">
+            <p>"El producto XYZ ha mejorado mi calidad de vida de manera notable. ¡Lo recomendaría a todos!"</p>
+            <i class="bg-black text-white fa-solid fa-user w-10 h-10 rounded-full flex justify-center items-center my-4"></i>
+            <cite>- Nombre del cliente</cite>
+          </div>
+        </div>
+        <div class="bg-[#dcd9eb] max-md:my-4 shadow-[2px_2px_20px_-3px_rgba(0,0,0,0.1)] text-black f-alexan rounded-[10px] px-6 py-12 mx-[30px] flex- justify-center items-center">
+          <div class="flex flex-col justify-center items-center">
+            <p>"El producto XYZ ha mejorado mi calidad de vida de manera notable. ¡Lo recomendaría a todos!"</p>
+            <i class="bg-black text-white fa-solid fa-user w-10 h-10 rounded-full flex justify-center items-center my-4"></i>
+            <cite>- Nombre del cliente</cite>
+          </div>
+        </div>
+        <div class="bg-[#d6e1dd] max-md:my-4  shadow-[2px_2px_20px_-3px_rgba(0,0,0,0.1)] text-black f-alexan rounded-[10px] px-6 py-12 mx-[30px] flex- justify-center items-center">
+          <div class="flex flex-col justify-center items-center">
+            <p>"El producto XYZ ha mejorado mi calidad de vida de manera notable. ¡Lo recomendaría a todos!"</p>
+            <i class="bg-black text-white fa-solid fa-user w-10 h-10 rounded-full flex justify-center items-center my-4"></i>
+            <cite>- Nombre del cliente</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <section class="w-screen h-auto flex flex-col f-alexan justify-center items-center f-alexan pb-8 bg-[#e8746a] text-white py-16 border-t-[16px] border-t-black">
+      <div class="flex w-full max-md:flex-col-reverse max-md:justify-center max-md:items-center">
+        <div class="w-[50%] max-md:w-[90%] flex justify-end items-center max-md:justify-center max-md:my-8">
+          <img class="w-[20vw] max-md:w-[50vw]" src="doctor-2.png" alt="">
+        </div>
+        <div class="w-[50%] max-md:w-[90%] flex justify-center items-center flex-col f-alexan max-md:px-6">
+          <h2 class="text-[36px] max-md:text-center">Garantía de calidad</h2>
+          <p class="w-[50%] max-md:w-[100%] text-[18px] max-md:text-center">Nuestros productos son cuidadosamente seleccionados y fabricados con los más altos estándares de calidad. Nos comprometemos a ofrecerte productos seguros y efectivos para tu bienestar.</p>
+        </div>
+      </div>
+    </section>
+	</main>
+</Layout>
+
+

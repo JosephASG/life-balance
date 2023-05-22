@@ -1,0 +1,235 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Marquee from '../components/animation/Marquee';
+import Animations from '../components/animation/main';
+
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+    	<script src="https://kit.fontawesome.com/26b28607c6.js" crossorigin="anonymous" is:inline></script>
+	</head>
+	<body>
+		<Animations client:only/>
+		<Marquee client:only/>
+		<Header/>
+		<slot />
+		<Footer/>
+
+		<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js" is:inline></script>
+
+		<script is:inline>
+			const lenis = new Lenis()
+
+			lenis.on('scroll', (e) => {
+				console.log(e)
+			})
+
+			function raf(time) {
+				lenis.raf(time)
+				requestAnimationFrame(raf)
+			}
+
+			requestAnimationFrame(raf)
+		</script>
+	</body>
+</html>
+<style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100;200;300;400;500;600;700;800;900&family=Baloo+2:wght@400;500;600;700;800&display=swap');
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		scroll-behavior: smooth;
+	}
+	html{
+		scroll-behavior: smooth;
+		
+	}
+	body{
+		overflow-x: hidden;
+		background-color: #f4f4e9;
+		scroll-behavior: smooth;
+	}
+
+	.f-alexan{
+		font-family: 'Alexandria', sans-serif;
+	}
+	.f-baloo{
+		font-family: 'Baloo 2', cursive;
+	}
+
+.section-weight {
+	background-image: url(wave.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.marquee__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* color: transparent; */
+    /* -webkit-text-stroke: 1px #ece5cb; */
+
+}
+div.is-hidden {
+	display: none;
+}
+
+.products-section{
+	background-image: url(wave-2.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+/* --------------------------- */
+
+.nav-toggle {
+    position: relative;
+    z-index: 99999999999;
+}
+
+.hamBox {
+    position: relative;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+/* --------------------------- */
+
+.ctn-items-nav {
+    position: fixed;
+    background: #121212;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    padding: 4em 0;
+    transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.wrapper-items-nav {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.wrapper-items-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.wrapper-items-nav ul li {
+    overflow: hidden;
+}
+
+.wrapper-items-nav ul li a {
+    position: relative;
+    will-change: transform;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    color: #fff;
+    text-decoration: none;
+    font-size: 3.5rem;
+    text-transform: capitalize;
+    transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wrapper-items-nav ul li a:before {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 50%;
+    right: 100%;
+    width: 0;
+    height: 1px;
+    background: #fff;
+    transition: 0.2s cubic-bezier(.87, 0, .13, 1);
+}
+
+.wrapper-items-nav ul li:hover a:before {
+    width: 100%;
+    right: 0;
+    transition: 0.2s cubic-bezier(.87, 0, .13, 1);
+}
+
+@media screen and (orientation: portrait) {
+
+    .ctn-items-nav {
+        flex-direction: column;
+    }
+
+    .wrapper-items-nav {
+        width: 100%;
+        height: 60vh;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .wrapper-items-nav ul {
+        flex-direction: column;
+		margin-left: 2rem;
+    }
+
+    .ctn-founder {
+        width: 100%;
+        height: 40vh;
+        /* border-top: 1px solid #fff; */
+        border-left: none;
+    }
+
+    .button-meet {
+        position: absolute;
+        bottom: 5%;
+        width: 100%;
+        margin-top: 10px;
+        overflow: hidden;
+    }
+
+    .wrapper-items-nav ul li a {
+        font-size: 26px;
+        margin: 5px 0;
+    }
+
+    .ctn-img {
+        width: 50vw;
+        height: auto;
+
+    }
+
+    .ctn-img img {
+        width: 50vw;
+        height: auto;
+    }
+}
+
+</style>

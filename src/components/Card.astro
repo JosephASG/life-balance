@@ -1,0 +1,151 @@
+---
+export interface Props {
+	title: string;
+	body: string;
+	href: string;
+	img_src: string;
+}
+
+const { href, title, body, img_src } = Astro.props;
+---
+
+<div class="card-product">
+	<header class="card_header">
+		<span class="material-symbols-outlined">
+		  <i class="fa-solid fa-chevron-left"></i>
+		</span>
+		<h1 class="card_title">Detalles</h1>
+		<span class="material-symbols-outlined">
+		  <i class="fa-regular fa-eye"></i>
+		</span>
+	</header>
+	<div class="card_gallery">
+		<img class="first img-product" src={img_src} draggable="false">
+	</div>
+	<div class="card_body">
+		<h1 class="card_title splide__slide">Lorem Ipsum</h1>
+		<p class="card_description splide__slide">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, reprehenderit.
+		</p>
+	</div>
+	<div class="card_info">
+		<span class="card_price splide__slide">$45.99</span>
+		<span class="material-symbols-outlined card_like">
+		  <i class="fa-solid fa-bag-shopping"></i>
+		</span>
+	</div>
+</div>
+<style>
+
+.card-product {
+  width: 350px;
+  padding: 1rem;
+  background-color: #ededeb;
+  border-radius: 20px;
+  box-shadow: 2px 2px 20px -3px rgba(0,0,0,0.1);
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.card_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card_title {
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+.card_description {
+  font-size: 1rem;
+  color: rgb(131, 131, 131);
+}
+
+.card_body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.card_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card_price {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.card_like {
+  color: white;
+  font-weight: bold;
+  padding: .5rem;
+  width: 50px;
+  height: 50px;
+  background-color: #548ba1;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.card_gallery {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img.img-product {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.fadeOut-right {
+  animation: fadeOut-right .5s ease;
+}
+
+.fadeOut-left {
+  animation: fadeOut-left .5s ease;
+}
+
+@keyframes fadeOut-right {
+  35% {
+    opacity: 1;
+  }
+
+  100% {
+    translate: 100% 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut-left {
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    translate: -100% 0;
+    opacity: 0;
+  }
+}
+
+@media not all and (min-width: 768px) {
+    .card-product {
+    width: 350px;
+    padding: 1rem;
+    margin: 0;
+  }
+}
+</style>
