@@ -39,7 +39,7 @@ const Navbar = () => {
                         <span className="uppercase text-[56px] max-md:text-[36px]">¿Quiénes somos?</span>
                         </a>
                     </li>
-                    
+{/*                     
                     <li>
                         <a
                         href="/work"
@@ -61,7 +61,7 @@ const Navbar = () => {
                             }}>
                             <span className='uppercase text-[56px] max-md:text-[36px]'>Reseñas</span>
                         </a>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
             <div className="flex justify-center items-end w-screen px-8 mb-12">
@@ -70,8 +70,8 @@ const Navbar = () => {
                     <span className='f-alexan font-thin text-xl text-white'>&#10230;</span>
                 </a>
             </div>
-            <div class="relative w-screen h-auto flex justify-between items-end !z-[999999]">
-                <div class="ml-16 max-lg:ml-8 text-left max-md:text-center max-md:flex max-md:flex-col max-md:justify-center max-md:items-center text-white !z-[99999]">
+            <div class="relative w-screen h-auto flex justify-center items-center !z-[999999]">
+                {/* <div class="ml-16 max-lg:ml-8 text-left max-md:text-center max-md:flex max-md:flex-col max-md:justify-center max-md:items-center text-white !z-[99999]">
                     <div class='flex text-left max-md:text-center !z-[99999] text-[#ffffff]'>
                         <a href="https://www.linkedin.com/in/joseph-santamaria-15269b257" class="!z-[99999] mr-6">
                             <i class="fa-brands fa-facebook text-[20px]"></i>  
@@ -83,11 +83,11 @@ const Navbar = () => {
                             <i class="fa-brands fa-whatsapp text-[20px]"></i>
                         </a>
                     </div>
-                </div>
+                </div> */}
 
-                <div class="mr-16 max-lg:mr-8 text-left max-md:text-center max-md:flex max-md:flex-col max-md:justify-center max-md:items-center text-white !z-[99999]">
+                <div class="text-center max-md:text-center max-md:flex max-md:flex-col max-md:justify-center max-md:items-center text-white !z-[99999]">
                     <div class='flex text-left max-md:text-center !z-[99999] text-[#ffffff]'>
-                        <span class="f-alexan text-[1vw] max-lg:text-[12px] content__title__hero" data-splitting data-effect11>© Life Balance</span>
+                        <span class="f-alexan text-[1vw] max-lg:text-[12px] content__title__hero" data-splitting data-effect11>© Mónica Murillo</span>
                     </div>
                 </div>
             </div>
