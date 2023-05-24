@@ -18,6 +18,7 @@ const { title } = Astro.props;
 		<meta name="description" content="Astro description">
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="stylesheet" href="https://unpkg.com/aksvideoplayer@1.0.0/dist/aksVideoPlayer.min.css">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
     	<script src="https://kit.fontawesome.com/26b28607c6.js" crossorigin="anonymous" is:inline></script>
@@ -30,6 +31,9 @@ const { title } = Astro.props;
 		<Footer/>
 
 		<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js" is:inline></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" is:inline></script>
+        <script src="https://unpkg.com/aksvideoplayer@1.0.0/dist/aksVideoPlayer.min.js" is:inline></script>
+        <script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js" is:inline></script>
 
 		<script is:inline>
 			const lenis = new Lenis()
@@ -47,30 +51,18 @@ const { title } = Astro.props;
 		</script>
         <script is:inline>
 
-            const player = document.querySelector("#play-video")
-            const videoOverlay = document.querySelector("#video-overlay")
-
-            player.addEventListener("click", function (e) {
-            e.preventDefault();
-            videoOverlay.classList.add("open")
-            videoOverlay.innerHTML += '<video src="video-medivida.mp4" autoplay controls></video>';
-            })
-
-            videoOverlay.addEventListener("click", function (e) {
-            e.preventDefault();
-            close_video();
-            });
-
-            document.addEventListener("keyup", function (e) {
-            if (e.keyCode === 27) {
-                close_video();
-            }
-            });
-
-            function close_video() {
-            videoOverlay.classList.remove("open")
-            videoOverlay.querySelector("video").remove();
-            }
+            $("#video").aksVideoPlayer({
+  file: [
+    {
+      file: "/video-medivida.mp4",
+      label: "1080p"
+    },
+  ],
+  width: 360,
+  height: 480,
+  poster: "/medivida.jpg",
+  forward: true,
+});
 
         </script>
 	</body>
